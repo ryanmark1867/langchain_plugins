@@ -10,6 +10,8 @@ Combine Langchain with ChatGPT plugins.
 
 ```
 general:
-   openai_key: 'AB_NYC_2019.csv'
+   openai_key: 'your_openai_key'
 ```
+
+Uses as input [LangChain documentation](https://python.langchain.com/docs/modules/agents/tools/integrations/chatgpt_plugins).
 
