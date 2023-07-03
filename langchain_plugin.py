@@ -25,6 +25,9 @@ except Exception as e:
 
 # define tool
 tool = AIPluginTool.from_plugin_url("https://www.klarna.com/.well-known/ai-plugin.json")
+#tool = AIPluginTool.from_plugin_url("https://https://www.wolframalpha.com/.well-known/ai-plugin.json")
+#tool = AIPluginTool.from_plugin_url("https://https://www.expedia.com/.well-known/ai-plugin.json")
+
 
 # use standard pandas approach to answer the questions
 
@@ -37,8 +40,9 @@ tools += [tool]
 agent_chain = initialize_agent(
     tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
 )
-agent_chain.run("what t shirts are available in klarna?") 
-
+#agent_chain.run("Are the rational numbers countably infinite?") 
+#agent_chain.run("What direct flights are available from Kitchener, Ontario to Vancouver, BC?") 
+agent_chain.run("what t shirts are available in klarna?")
 
 
 
