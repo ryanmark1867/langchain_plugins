@@ -13,8 +13,8 @@ general:
    plugin: 'klarna'
 plugin_url:
    klarna: "https://www.klarna.com/.well-known/ai-plugin.json"
-   wolframalpha: "https://https://www.wolframalpha.com/.well-known/ai-plugin.json"
-   expedia: "https://https://www.expedia.com/.well-known/ai-plugin.json"
+   wolframalpha: "https://www.wolframalpha.com/.well-known/ai-plugin.json"
+   expedia: "https://www.expedia.com/.well-known/ai-plugin.json"
 plugin_prompt:
    klarna: "what t shirts are available in klarna?"
    wolframalpha: "what is the square root of 169?"
