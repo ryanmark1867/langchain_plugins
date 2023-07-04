@@ -24,12 +24,9 @@ except Exception as e:
 
 
 # define tool
-tool = AIPluginTool.from_plugin_url("https://www.klarna.com/.well-known/ai-plugin.json")
-#tool = AIPluginTool.from_plugin_url("https://https://www.wolframalpha.com/.well-known/ai-plugin.json")
-#tool = AIPluginTool.from_plugin_url("https://https://www.expedia.com/.well-known/ai-plugin.json")
-
-
-# use standard pandas approach to answer the questions
+print("plugin is: ",config['general']['plugin'])
+print("plugin_url is: ",config['plugin_url'][config['general']['plugin']])
+tool = AIPluginTool.from_plugin_url(config['plugin_url'][config['general']['plugin']])
 
 # set LLM type
 os.environ["OPENAI_API_KEY"] = config['general']['openai_key']
@@ -40,9 +37,10 @@ tools += [tool]
 agent_chain = initialize_agent(
     tools, llm, agent=AgentType.ZERO_SHOT_REACT_DESCRIPTION, verbose=True
 )
-#agent_chain.run("Are the rational numbers countably infinite?") 
-#agent_chain.run("What direct flights are available from Kitchener, Ontario to Vancouver, BC?") 
-agent_chain.run("what t shirts are available in klarna?")
+
+# invoke the plugin with the prompt
+print("plugin_prompt is: ",config['plugin_prompt'][config['general']['plugin']])
+agent_chain.run(config['plugin_prompt'][config['general']['plugin']])
 
 
 
