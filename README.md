@@ -1,4 +1,4 @@
-# Pandas experiments with LangChain and plugins
+# Experiments with LangChain and plugins
 
 Combine Langchain with ChatGPT plugins.
 
