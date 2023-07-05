@@ -30,9 +30,9 @@ tool = AIPluginTool.from_plugin_url(config['plugin_url'][config['general']['plug
 
 # set LLM type
 os.environ["OPENAI_API_KEY"] = config['general']['openai_key']
-llm = ChatOpenAI(temperature=0)
+llm = ChatOpenAI(temperature=0,max_tokens=500,model_name="gpt-3.5-turbo-16k")
 #tools = load_tools(["requests_all"])
-tools = load_tools(["requests"])
+tools = load_tools(["requests_all"])
 tools += [tool]
 
 agent_chain = initialize_agent(
